@@ -10,5 +10,15 @@ RSpec.describe 'hybrid_bills', type: :routing do
         )
       end
     end
+
+      context 'show' do
+        it 'GET hybrid_bills#show' do
+          expect(get: '/petition-a-hybrid-bill/1').to route_to(
+          controller: 'hybrid_bills',
+          action:     'show',
+          bill_id:   '1'
+          )
+        end
+      end
   end
 end
